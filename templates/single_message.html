@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+<p><a href="..">Back to list</a></p>
+<pre>From: {{ message.from }}
+Subject: {{ message.subject }}
+Date: {{ message.date }}
+
+{{ message.payload }}
+
+{% for part in other_parts %}<a href="{{ message.uid }}/part/{{ part.idx }}">{{ part.content_type }}</a>
+{% endfor %}</pre>
+{% endblock %}

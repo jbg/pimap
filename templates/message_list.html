@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+<p><a href="logout">Logout</a></p>
+<table>
+{% for message in messages %}
+  <tr>
+    <td>{{ message.date }}</td>
+    <td>{{ message.from }}</td>
+    <td><a href="message/{{ message.uid }}">{{ message.subject }}</a></td>
+  </tr>
+{% endfor %}
+</table>
+{% endblock %}
